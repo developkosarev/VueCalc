@@ -11,6 +11,7 @@
     "jsdt": "json-server data.js -p 3500"
   },
   "dependencies": {
+    "@braid/vue-formulate": "^2.5.3",
     "bootstrap-vue": "^2.9.0",
     "core-js": "^3.6.4",
     "json-server": "^0.16.1",

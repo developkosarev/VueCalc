@@ -1,7 +1,6 @@
 export default class ApiService {
   constructor() {
-    //this._apiBase = "http://localhost:3000/";
-	this._apiBase = "";
+    this._apiBase = ""; //this._apiBase = "http://localhost:3000/";
   }
 
   param(obj) {
@@ -91,7 +90,7 @@ export default class ApiService {
 
   async annuitiesPost(data) {
     //const res = await this.postResource(`api/annuities`, data);
-	const res = await this.postResource(`api/annuities`, data);
+    const res = await this.postResource(`api/annuities`, data);
     return this._transformAnnuities(res);
   }
 

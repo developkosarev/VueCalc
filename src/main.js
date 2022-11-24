@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import apiService from "./services/ApiService";
+import VueFormulate from "@braid/vue-formulate";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -10,6 +11,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import { NavbarPlugin } from "bootstrap-vue";
 
 Vue.use(NavbarPlugin);
+Vue.use(VueFormulate);
 
 Vue.config.productionTip = false;
 
