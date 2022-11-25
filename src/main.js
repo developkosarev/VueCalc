@@ -16,6 +16,7 @@ Vue.use(VueFormulate);
 Vue.config.productionTip = false;
 
 Vue.apiService = new apiService();
+Vue.$eventBus = new Vue();
 
 new Vue({
   router,

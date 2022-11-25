@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Formulate from "../views/Formulate.vue";
+import Events from "../views/Events.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/formulate",
     name: "Formulate",
     component: Formulate
+  },
+  {
+    path: "/events",
+    name: "Events",
+    component: Events
   }
 ];
 
