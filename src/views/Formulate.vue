@@ -34,6 +34,7 @@
       #default="{ isLoading, hasErrors }"
       @submit="loginPromise"
       v-on:failed-validation="failedValidation"
+      v-on:submit-raw="submitRaw"
     >
       <FormulateInput type="text" name="email" validation="required" />
       <FormulateInput type="text" name="password" validation="required" />
@@ -69,11 +70,13 @@ export default {
   },
   methods: {
     loginPromise() {
+      console.log("4. Start submit promise");
       return new Promise(resolve => {
         setTimeout(() => resolve("Done"), 3000);
       });
     },
     async loginAsync() {
+      console.log("4. Start submit async");
       try {
         let promise = new Promise(resolve => {
           setTimeout(() => resolve("Done"), 3000);
@@ -103,19 +106,18 @@ export default {
         //this.formErrors = ['Sorry, an unexpected error occurred. Please try again soon..']
       }
     },
-    failedValidation(val) {
-      console.log("Error");
-      console.log(val);
+    submitRaw() {
+      console.log("2. Submit Raw");
+    },
+    failedValidation() {
+      console.log("3. Error Validation");
     },
     reset() {
       this.$formulate.reset("login");
     },
     click() {
-      //this.formErrors = ['eeeeeeeeeeeeee']
-      console.log("Validate");
-
-      let res = this.$formulate.submit("login");
-      console.log(res);
+      console.log("1. Click");
+      this.$formulate.submit("login");
     }
   }
 };
