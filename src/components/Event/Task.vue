@@ -22,7 +22,7 @@ export default {
         this.$store.commit("queue/finishEvent");
       }, 5000);
 
-      console.log("clickHandler2");      
+      console.log("clickHandler2");
     }
   }
 };

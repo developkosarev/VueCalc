@@ -31,26 +31,26 @@
       v-model="formValues"
       :form-errors="formErrors"
       :errors="inputErrors"
-      #default="{ hasErrors }"
-      @submit="login"
+      #default="{ isLoading, hasErrors }"
+      @submit="loginPromise"
+      v-on:failed-validation="failedValidation"
     >
-      <FormulateInput type="email" name="email" validation="required|email" />
-      <FormulateInput type="password" name="password" validation="required" />
+      <FormulateInput type="text" name="email" validation="required" />
+      <FormulateInput type="text" name="password" validation="required" />
       <FormulateErrors />
-      <FormulateInput
-        type="submit"        
-        :disabled="hasErrors"        
-      />
-      <FormulateInput
-        type="button"
-        label="Reset"
-        data-ghost
-        @click="reset"
-      />
+      <FormulateInput type="submit" :disabled="hasErrors" />
+      <FormulateInput type="button" label="Reset" data-ghost @click="reset" />
       <pre class="code" v-text="formValues" />
       <pre class="code" v-text="formErrors" />
       <pre class="code" v-text="inputErrors" />
-      <pre class="code" v-text="hasErrors" />
+      <div>
+        hasErrors:
+        <pre class="code" v-text="hasErrors" />
+      </div>
+      <div>
+        isLoading:
+        <pre class="code" v-text="isLoading" />
+      </div>
     </FormulateForm>
 
     <button @click="click">Validate</button>
@@ -68,9 +68,21 @@ export default {
     };
   },
   methods: {
-    async login() {
+    loginPromise() {
+      return new Promise(resolve => {
+        setTimeout(() => resolve("Done"), 3000);
+      });
+    },
+    async loginAsync() {
       try {
-        setTimeout(() => console.log(111111), 3000);
+        let promise = new Promise(resolve => {
+          setTimeout(() => resolve("Done"), 3000);
+        });
+        let result = await promise; // будет ждать, пока промис не выполнится (*)
+
+        alert(result);
+
+        //setTimeout(() => console.log(111111), 3000);
 
         //const res = await this.$axios.post('/login')
         //this.$cookie.setToken(res.data.token) // do some auth
@@ -91,14 +103,18 @@ export default {
         //this.formErrors = ['Sorry, an unexpected error occurred. Please try again soon..']
       }
     },
-    reset () {
-      this.$formulate.reset('login')
+    failedValidation(val) {
+      console.log("Error");
+      console.log(val);
+    },
+    reset() {
+      this.$formulate.reset("login");
     },
     click() {
       //this.formErrors = ['eeeeeeeeeeeeee']
-      console.log('Validate');
+      console.log("Validate");
 
-      let res = this.$formulate.submit('login');
+      let res = this.$formulate.submit("login");
       console.log(res);
     }
   }

@@ -15,7 +15,7 @@ export default {
   computed: {
     ...mapGetters(["getEventStatus"])
   },
-  watch: {    
+  watch: {
     getEventStatus(newVal, oldVal) {
       if (newVal === false && oldVal === true) {
         console.log("getEventStatus");
@@ -23,7 +23,7 @@ export default {
       }
       //if (newQuestion.includes('?')) {
       //  this.getAnswer()
-      //}      
+      //}
     }
   },
   methods: {
@@ -37,6 +37,6 @@ export default {
     step2() {
       console.log("step 2");
     }
-  },
+  }
 };
 </script>
