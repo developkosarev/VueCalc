@@ -5,6 +5,7 @@ import About from "../views/About.vue";
 import Formulate from "../views/Formulate.vue";
 import Events from "../views/Events.vue";
 import Resize from "../views/Resize.vue";
+import Telephone from "../views/Telephone.vue";
 
 Vue.use(VueRouter);
 
@@ -33,7 +34,12 @@ const routes = [
     path: "/resize",
     name: "Resize",
     component: Resize
-  }
+  },
+  {
+    path: "/telephone",
+    name: "Telephone",
+    component: Telephone
+  },
 ];
 
 //mode: "history",
