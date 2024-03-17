@@ -38,6 +38,13 @@
     >
       <FormulateInput type="text" name="email" validation="required" />
       <FormulateInput type="text" name="password" validation="required" />
+
+      <FormulateInput name="address" autocomplete="shipping address-line1" />
+      <FormulateInput name="apartment" autocomplete="shipping address-line2" />
+      <FormulateInput name="city" autocomplete="shipping address-level2" />
+      <FormulateInput name="state" autocomplete="shipping address-level1" />
+      <FormulateInput name="country" autocomplete="shipping country" />
+
       <FormulateErrors />
       <FormulateInput type="submit" :disabled="hasErrors" />
       <FormulateInput type="button" label="Reset" data-ghost @click="reset" />

@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Formulate from "../views/Formulate.vue";
 import Events from "../views/Events.vue";
+import Resize from "../views/Resize.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/events",
     name: "Events",
     component: Events
+  },
+  {
+    path: "/resize",
+    name: "Resize",
+    component: Resize
   }
 ];
 

@@ -9,6 +9,7 @@
         <b-nav-item to="/about">About</b-nav-item>
         <b-nav-item to="/formulate">Formulate</b-nav-item>
         <b-nav-item to="/events">Events</b-nav-item>
+        <b-nav-item to="/resize">Resize</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
