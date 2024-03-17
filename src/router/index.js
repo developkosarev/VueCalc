@@ -39,7 +39,7 @@ const routes = [
     path: "/telephone",
     name: "Telephone",
     component: Telephone
-  },
+  }
 ];
 
 //mode: "history",

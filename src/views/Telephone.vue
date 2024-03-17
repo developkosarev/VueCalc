@@ -20,9 +20,7 @@
       <FormulateInput name="city" autocomplete="shipping address-level2" />
       <FormulateInput name="state" autocomplete="shipping address-level1" />
       <FormulateInput name="country" autocomplete="shipping country" />
-      <PhoneInput
-      ></PhoneInput>
-
+      <PhoneInput></PhoneInput>
 
       <FormulateErrors />
       <FormulateInput type="submit" :disabled="hasErrors" />
